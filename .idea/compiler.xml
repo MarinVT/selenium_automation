@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="pomPageFactory2 (1)" />
+        <module name="pomPageFactory2 (2)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="pomPageFactory2" target="11" />
+      <module name="pomPageFactory2 (1)" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

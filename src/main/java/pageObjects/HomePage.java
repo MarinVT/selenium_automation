@@ -72,6 +72,9 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[@href='/sudbi'][contains(.,'Съдби')]")
     private WebElement sudbiDropdownLocator;
 
+    @FindBy(xpath = "//a[@href='/intimno'][contains(.,'Интимно')]")
+    private WebElement intimnoDropdownLocator;
+
     // ----> Footer links locators <----
     @FindBy(linkText = "Контакти")
     private WebElement contactsLinkFooterLocator;
@@ -193,6 +196,11 @@ public class HomePage extends BasePage {
     public SudbiCategory openDropdownSelectSudbi() {
         waitElementAndClickOnIt(sudbiDropdownLocator);
         return new SudbiCategory();
+    }
+
+    public IntimnoPageCategory openDropdownSelectIntinmo() {
+        waitElementAndClickOnIt(intimnoDropdownLocator);
+        return new IntimnoPageCategory();
     }
 
     // FOOTER METHODS NAVIGATING TO EACH PAGE - КОНТАКТИ, За Реклама, Общи условия, Етични правила, Лични данни и други
