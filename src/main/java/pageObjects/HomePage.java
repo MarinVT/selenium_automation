@@ -50,6 +50,7 @@ public class HomePage extends BasePage {
 
     // Share component locators ENDS
 
+
     // Search functionality locators
     @FindBy(xpath = "//img[@src='/image/icon/search.svg?v=48&format=webp']")
     private WebElement searchIcon;
