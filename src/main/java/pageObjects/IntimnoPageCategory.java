@@ -25,7 +25,7 @@ public class IntimnoPageCategory extends BasePage {
     private WebElement mainListFirstArticle;
 
     // Locator list with latest articles located under the list with lead news
-    @FindBy(xpath = "/html/body/div[1]/main/div[5]/section/section")
+    @FindBy(xpath = "//section[contains(@class,'list-items')]")
     private WebElement latestNewsListLocator;
 
     // Button Load More locator
@@ -62,12 +62,17 @@ public class IntimnoPageCategory extends BasePage {
         waitVisibilityOfWebElement(latestNewsListLocator);
     }
 
-    public void loadMoreButtonListed() {
+    public void loadMoreButtonListed(String titleLoadMoreButton) {
         waitVisibilityOfWebElement(loadMoreButtonLocator);
+        assertEqualsByWebElementExpectedText(loadMoreButtonLocator, titleLoadMoreButton);
     }
 
     public void intimnoCategoryTitleListed() {
         waitVisibilityOfWebElement(intimnoCategoryTitleLocator);
+    }
+
+    public void scrollDownToLoadMoreButton() {
+        scrollDown(loadMoreButtonLocator);
     }
 
 }

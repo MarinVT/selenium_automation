@@ -13,8 +13,8 @@ public class CategoryTitleSteps {
         this.intimnoPageCategory = intimnoPageCategory;
     }
 
-    @Given("User opens {string} to verify that the category title Интимно is listed")
-    public void user_opens_to_verify_that_the_category_title_интимно_is_listed(String url) {
+    @Given("User opens {string} to verify that the category title Intimno is listed")
+    public void user_opens_to_verify_that_the_category_title_Intimno_is_listed(String url) {
         intimnoPageCategory.openTopStoryPageURL(url);
     }
 

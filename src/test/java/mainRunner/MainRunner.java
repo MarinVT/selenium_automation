@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = {"classpath:features"},
-        tags = "@intimno2",
+        tags = "@intimno",
         glue = {"stepDefinitions"},
         monochrome = true,
         dryRun = false,
@@ -14,10 +14,6 @@ import io.cucumber.testng.CucumberOptions;
 
 public class MainRunner extends AbstractTestNGCucumberTests {
 
-//    @Override
-//    @DataProvider(parallel = true)
-//    public Object[][] scenarios() {
-//        return super.scenarios();
-//    }
+
 }
 

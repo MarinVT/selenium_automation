@@ -1,6 +1,6 @@
 package basePage;
 
-import SeleniumDriver.DriverFactory;
+import SeleniumDriverFactory.DriverFactory;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.WheelInput;
@@ -30,6 +30,7 @@ public class BasePage {
      */
     public BasePage() {
         PageFactory.initElements(getDriver(), this);
+
         wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
     }
 
