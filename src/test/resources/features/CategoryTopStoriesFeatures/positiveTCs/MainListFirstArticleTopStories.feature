@@ -1,5 +1,6 @@
 @topStory @UI
-Feature: Top Stories main list
+Feature:
+  main list
   Main list is activated from the CMS
 
   Scenario: User is able to validate that the first article is listed

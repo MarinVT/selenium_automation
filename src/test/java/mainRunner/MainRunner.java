@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = {"classpath:features"},
-        tags = "@intimno",
+        tags = "@intimno5",
         glue = {"stepDefinitions"},
         monochrome = true,
         dryRun = false,

@@ -30,7 +30,6 @@ public class BasePage {
      */
     public BasePage() {
         PageFactory.initElements(getDriver(), this);
-
         wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
     }
 
@@ -58,7 +57,6 @@ public class BasePage {
     public void waitVisibilityOfWebElement(WebElement element) {
         wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
         wait.until(ExpectedConditions.visibilityOfAllElements(element));
-        System.out.println();
     }
 
     /**

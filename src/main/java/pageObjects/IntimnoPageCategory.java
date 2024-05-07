@@ -10,6 +10,9 @@ public class IntimnoPageCategory extends BasePage {
         super();
     }
 
+    /**
+     * Test URL to compare
+     */
     String intimnoURL = "https://hotnews.bg/intimno";
 
     // Accept cookie button locator
@@ -21,8 +24,9 @@ public class IntimnoPageCategory extends BasePage {
     private WebElement intimnoCategoryTitleLocator;
 
     // Main list first article locator
-    @FindBy(xpath = "(//img[@class='post__img'])[1]")
+    @FindBy(xpath = "(//img[contains(@class,'img')])[1]")
     private WebElement mainListFirstArticle;
+
 
     // Locator list with latest articles located under the list with lead news
     @FindBy(xpath = "//section[contains(@class,'list-items')]")
@@ -53,17 +57,17 @@ public class IntimnoPageCategory extends BasePage {
     }
 
     // Is first article listed from the main list of the category
-    public void isFirstArticleListed() {
-        waitVisibilityOfWebElement(mainListFirstArticle);
+    public void firstArticleListedMainList() {
+        waitElementToBeVisible(mainListFirstArticle);
     }
 
     // Method that checks is a list with latest article is presented on the page
     public void latestArticlesListPresented() {
-        waitVisibilityOfWebElement(latestNewsListLocator);
+        waitElementToBeVisible(latestNewsListLocator);
     }
 
     public void loadMoreButtonListed(String titleLoadMoreButton) {
-        waitVisibilityOfWebElement(loadMoreButtonLocator);
+        waitElementToBeVisible(loadMoreButtonLocator);
         assertEqualsByWebElementExpectedText(loadMoreButtonLocator, titleLoadMoreButton);
     }
 
