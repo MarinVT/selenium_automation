@@ -1,4 +1,5 @@
 @intimno5
+
 Feature: Intimno main list
   Main list is activated from the CMS and contains an article on 1st position
 

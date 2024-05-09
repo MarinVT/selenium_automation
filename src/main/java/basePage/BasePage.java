@@ -1,6 +1,6 @@
 package basePage;
 
-import SeleniumDriverFactory.DriverFactory;
+import DriverFactory.DriverFactory;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.WheelInput;
@@ -35,7 +35,7 @@ public class BasePage {
 
     /**
      * public static WebDriver driver;
-     * @return griver
+     * @return driver
      */
     public WebDriver getDriver() {
         return DriverFactory.getDriver();
@@ -51,7 +51,7 @@ public class BasePage {
 
 
     /**
-     * WAIT VISIBILITY OF WEBELEMENTS
+     * WAIT VISIBILITY OF WEBELEMENTS AND RETURNS THE FIRST OCCURRENCE
      * @param element
      */
     public void waitVisibilityOfWebElement(WebElement element) {
@@ -79,7 +79,7 @@ public class BasePage {
     }
 
     /**
-     * Hover methods using Actions
+     * Hover methods using Actions class
      * @param webElement
      */
     public void hoverEffectOverAnElement(WebElement webElement) {
@@ -109,7 +109,6 @@ public class BasePage {
         wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
         actions = new Actions(getDriver());
         actions.moveToElement(wait.until(ExpectedConditions.visibilityOf(webElement))).perform();
-//        waitCustomMethod(2000);
     }
 
     /**
@@ -182,7 +181,7 @@ public class BasePage {
      * @param selectByText
      */
     public void selectFromDropDownByText(WebElement element, String selectByText) {
-        waitVisibilityOfWebElement(element);
+        waitElementToBeVisible(element);
         select = new Select(element);
         select.selectByVisibleText(selectByText);
     }
@@ -193,6 +192,7 @@ public class BasePage {
      * @param selectByValue
      */
     public void selectFromDropDownByValue(WebElement element, String selectByValue) {
+        waitElementToBeVisible(element);
         select = new Select(element);
         select.selectByValue(selectByValue);
     }
@@ -202,7 +202,7 @@ public class BasePage {
      * @param element
      */
     public void clearField(WebElement element) {
-        waitVisibilityOfWebElement(element);
+        waitElementToBeVisible(element);
         element.clear();
     }
 
@@ -213,7 +213,7 @@ public class BasePage {
      * @return
      */
     public String readTextWebElement(WebElement webElement) {
-        waitVisibilityOfWebElement(webElement);
+        waitElementToBeVisible(webElement);
         return webElement.getText();
     }
 
@@ -224,7 +224,7 @@ public class BasePage {
      * @param expectedText
      */
     public void assertEqualsByWebElementExpectedText(WebElement webElement, String expectedText) {
-        waitVisibilityOfWebElement(webElement);
+        waitElementToBeVisible(webElement);
         Assert.assertEquals(readTextWebElement(webElement), expectedText);
         System.out.println("Main text is: " + expectedText);
     }
@@ -267,7 +267,7 @@ public class BasePage {
      * @param webElement
      */
     public void scrollDown(WebElement webElement) {
-        waitVisibilityOfWebElement(webElement);
+        waitElementToBeVisible(webElement);
         actions = new Actions(getDriver());
         actions.sendKeys(Keys.PAGE_DOWN);
         actions.perform();
@@ -290,7 +290,7 @@ public class BasePage {
      * @param keyPressTimes
      */
     public void moveSliderKeyArrowLeft(WebElement sliderElement, boolean isRightSliding, int keyPressTimes) {
-        waitVisibilityOfWebElement(sliderElement);
+        waitElementToBeVisible(sliderElement);
         Actions moveSlider = new Actions(getDriver());
 
         if (isRightSliding) {
@@ -309,7 +309,7 @@ public class BasePage {
      * @param keyPressTimes
      */
     public void moveSliderKeyArrowRight(WebElement sliderElement, boolean isRightSliding, int keyPressTimes) {
-        waitVisibilityOfWebElement(sliderElement);
+        waitElementToBeVisible(sliderElement);
 
         if (isRightSliding) {
             for (int i = 1; i < keyPressTimes; i++) {

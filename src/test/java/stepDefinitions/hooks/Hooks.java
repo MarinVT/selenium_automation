@@ -11,8 +11,8 @@ import org.openqa.selenium.WebDriver;
 import java.io.IOException;
 import java.sql.Timestamp;
 
-import static SeleniumDriverFactory.DriverFactory.cleanUpDriver;
-import static SeleniumDriverFactory.DriverFactory.getDriver;
+import static DriverFactory.DriverFactory.cleanUpDriver;
+import static DriverFactory.DriverFactory.getDriver;
 
 public class Hooks {
 

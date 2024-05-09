@@ -1,4 +1,4 @@
-package SeleniumDriverFactory;
+package DriverFactory;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -30,20 +30,19 @@ public class DriverFactory {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
-////                    driver.manage().deleteAllCookies();
-//                    ChromeOptions chromeOptions = new ChromeOptions();
-//
-//                    driver = new ChromeDriver(chromeOptions);
 
                  break;
                  case "firefox":
                      FirefoxOptions options = new FirefoxOptions();
                      options.setBinary("/usr/lib/firefox/firefox");
                      driver = new FirefoxDriver(options);
+
+                     // Uncomment this line if the OS is windows
 //                     driver.manage().deleteAllCookies();
 //                     WebDriverManager.firefoxdriver().setup();
 //                     driver = new FirefoxDriver();
                  break;
+
              default:
                  System.out.println("browser : " + getBrowserTypePropsFile() + " is invalid");
          }
