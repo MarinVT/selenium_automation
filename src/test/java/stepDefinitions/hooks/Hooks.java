@@ -16,8 +16,6 @@ import static DriverFactory.DriverFactory.getDriver;
 
 public class Hooks {
 
-    public WebDriver driver;
-
     @Before
     public void setUp() throws IOException {
         getDriver();
