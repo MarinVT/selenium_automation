@@ -24,7 +24,6 @@ public class BasePage {
     public Actions actions;
     public Select select;
 
-    // Test
     /**
      * Constructor
      */

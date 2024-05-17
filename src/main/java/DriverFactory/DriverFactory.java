@@ -38,7 +38,6 @@ public class DriverFactory {
                      driver = new FirefoxDriver(options);
 
                      // Uncomment this line if the OS is windows
-//                     driver.manage().deleteAllCookies();
 //                     WebDriverManager.firefoxdriver().setup();
 //                     driver = new FirefoxDriver();
                  break;
