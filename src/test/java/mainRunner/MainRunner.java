@@ -7,7 +7,7 @@ import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
         features = {"classpath:features"},
-        tags = "@intimno",
+        tags = "intimno",
         glue = {"stepDefinitions"},
         monochrome = true,
         dryRun = false,
